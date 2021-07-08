@@ -1,0 +1,109 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+
+{#card part#}
+{% block home %}
+
+
+ {#################################################################################################}
+   {% load static %}
+    <div class="container-fluid" style="z-index:-1!important; position:relative">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'banner/b1.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'banner/b2.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'banner/b3.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+
+
+{##################################################################################################}
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+    {% for i in all_prod %}
+      
+
+      <div class="card mx-auto mt-5 shadow" style="width: 18rem;">
+      <img src="{{i.product_image.url}}" class="card-img-top" alt="..." style="height: 300px;">
+      <div class="card-body">
+       <h5 class="card-title " style="font-weight: bolder;color: dodgerblue">{{i.title}}</h5>
+       <p class="card-text text-danger" ><b style="color:rgb(255, 76, 0)">Price: <small class="fw-light text-success text-decoration-line-through">{{i.selling_price}}</small>
+         //  {{i.discount_price}} Tk</b></p>
+       <a href="{% url 'productdetailname' i.id %}" class="btn btn-danger">Buy Product</a>
+      </div>
+      </div>
+
+
+    {% endfor %}
+    </div>
+
+
+
+{#Paginator############################################################################################}
+
+<nav class="mt-5" >
+  <ul class="pagination justify-content-center">
+
+  
+  {% if all_prod.has_previous %}
+    <li class="page-item ">
+      <a class="page-link" href="?page={{ all_prod.previous_page_number }}">Pre</a>
+    </li>
+    {% else %}
+      <li class="page-item disabled">
+      <span class="page-link ">Pre</span>
+    </li>
+
+  {% endif %}
+
+  
+{% for i in all_prod.paginator.page_range %}
+<li class="page-item {% if all_prod.number == i %}active{% endif %}"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+{% endfor %}
+
+  {% if all_prod.has_next %}
+    <li class="page-item">
+      <a class="page-link " href="?page={{ all_prod.next_page_number }}">Next</a>
+    </li>
+  {% else %}
+    <li class="page-item disabled">
+      <span class="page-link ">Next</span>
+    </li>
+  {% endif %}
+
+  </ul>
+</nav>
+
+</div>
+
+
+
+{% endblock home %}
+    

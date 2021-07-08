@@ -1,0 +1,181 @@
+
+#navber{
+    background-color: rgb(230, 30, 16);
+    height: 60px;
+    color: white;
+}
+
+.src{
+    border-radius: 20px;
+}
+
+.i1{
+    font-size: 26px;
+}
+.i2{
+    font-size: 26px;
+}
+.i1:hover{
+    color:wheat;
+
+}
+.i2:hover{
+    color:wheat;
+
+}
+
+.i3{
+    font-size: 26px;
+    color: white;
+}
+
+.srcb{
+  background-color: rgba(0, 255, 213, 0.849);
+  border-radius: 20px;
+  width: 80px;
+}
+
+
+
+@media only screen and (max-width: 1050px) {
+
+    .logo{
+        font-size: 25px;
+    }
+
+
+  }
+
+  @media  screen and (max-width: 990px) {
+
+    #navber{
+
+        height: 100px;
+    }
+    .frmtab{
+        margin-bottom: 20px;
+    }
+    .src{
+        width: 100%;
+        margin-left: 10px;
+    }
+    .fromcon{
+        width: 100%;
+
+    }
+    .i1{
+        font-size: 20px;
+    }
+    .i2{
+        font-size: 20px;
+    }
+
+  }
+
+  @media only screen and (max-width: 480px) {
+
+    .logo{
+        font-size: 15px;
+    }
+    .srcb{
+        width: 40px;
+      }
+
+
+  }
+/*
+  ################################################################ */
+
+  .sideber{
+      background-color: rgb(255, 47, 47);
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-top: 90px;
+      transition: all 0.5s;
+      text-align: center;
+      width: 0px;
+
+
+  }
+  .closebtn{
+    position: absolute;
+    right: 15px;
+    top: 0;
+    margin-top: 13px;
+}
+
+/*
+################################## */
+
+ol{
+    width: 100%;
+    list-style: none;
+    padding-left: 0;
+
+}
+
+ol li{
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-top:0.5px solid wheat ;
+    border-bottom:0.5px solid wheat ;
+
+    position: relative;
+    letter-spacing: 1px;
+
+
+}
+
+ol li a{
+    text-decoration: none;
+    color: aliceblue;
+
+
+}
+
+
+ol li span{
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.nasted1{
+    display: none;
+
+
+
+}
+.nasted2{
+    display: none;
+
+
+
+}
+
+.logn,.sign{
+    text-decoration: none;
+    font-size: larger;
+    color: white;
+
+}
+
+.logn:hover{
+    color: wheat;
+
+
+}
+
+.sign:hover{
+    color:wheat;
+
+}
